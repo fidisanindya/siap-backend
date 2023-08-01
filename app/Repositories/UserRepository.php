@@ -9,7 +9,7 @@ class UserRepository implements UserRepositoryInterface
 {
     public function getByPhone($phone)
     {
-        return User::where('phone', wordwrap($phone, 4, " ", true))->with(['presensi', 'dinas_luar', 'izin', 'departemen', 'gender', 'golongan'])->first();
+        return User::where('phone', $phone)->with(['presensi', 'dinas_luar', 'izin', 'departemen', 'gender', 'golongan'])->first();
     }
 
     public function all()

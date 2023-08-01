@@ -21,7 +21,7 @@
         "maatwebsite/excel": "^3.1",
         "simplesoftwareio/simple-qrcode": "^4.1",
         "spatie/laravel-fractal": "^5.8",
-        "tcg/voyager": "^1.4",
+        "tcg/voyager": "*",
         "tightenco/ziggy": "^0.9.4"
     },
     "require-dev": {
@@ -77,10 +77,6 @@
         "packagist": {
             "type": "composer",
             "url": "https://repo.packagist.org"
-        },
-        "hooks": {
-            "type": "composer",
-            "url": "https://larapack.io"
         }
     }
 }

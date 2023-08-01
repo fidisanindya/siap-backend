@@ -42,7 +42,7 @@ return [
     */
 
     'models' => [
-        'namespace' => 'App\\Models\\',
+       // 'namespace' => 'App\\Models\\',
     ],
 
     /*
@@ -55,7 +55,7 @@ return [
     */
 
     'storage' => [
-        'disk' => env('FILESYSTEM_DRIVER', 'public'),
+        'disk' => 'public',
     ],
 
     /*
@@ -80,7 +80,7 @@ return [
 
     'database' => [
         'tables' => [
-            'hidden' => ['migrations', 'data_rows', 'data_types', 'menu_items', 'password_resets', 'permission_role', 'settings'],
+            'hidden' => ['migrations', 'data_rows', 'data_types', 'menu_items', 'password_resets', 'permission_role', 'personal_access_tokens', 'settings'],
         ],
         'autoload_migrations' => true,
     ],
@@ -133,7 +133,7 @@ return [
                 'icon_class' => 'voyager-person',
             ],
             'voyager::generic.home' => [
-                'route'        => '/spo',
+                'route'        => '/',
                 'icon_class'   => 'voyager-home',
                 'target_blank' => true,
             ],
@@ -144,8 +144,7 @@ return [
         ],
 
         'widgets' => [
-            "App\\Widgets\\UserWidget",
-            // "App\\Widgets\\DepartmentWidget",
+
         ],
 
     ],
@@ -224,8 +223,7 @@ return [
 
     'media' => [
         // The allowed mimetypes to be uploaded through the media-manager.
-        'allowed_mimetypes' => '*', //All types can be uploaded
-        /*
+        // 'allowed_mimetypes' => '*', //All types can be uploaded
         'allowed_mimetypes' => [
           'image/jpeg',
           'image/png',
@@ -233,7 +231,6 @@ return [
           'image/bmp',
           'video/mp4',
         ],
-        */
         //Path for media-manager. Relative to the filesystem.
         'path'                => '/',
         'show_folders'        => true,
@@ -257,5 +254,9 @@ return [
                 'height'=> 500
            ],
        ]*/
+    ],
+
+    'middleware' => [
+        'admin.user' => \TCG\Voyager\Http\Middleware\VoyagerAdminMiddleware::class,
     ],
 ];

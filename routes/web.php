@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use TCG\Voyager\Facades\Voyager;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,6 @@ Route::get('/download', [App\Http\Controllers\MainController::class, 'download']
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Auth::routes();
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

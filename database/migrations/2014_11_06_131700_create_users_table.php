@@ -20,10 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('phone')->unique()->nullable();
             $table->string('nip')->unique()->nullable();
-            $table->foreignId('gender_id')->references('id')->on('genders')->nullable()->default(1);
-            $table->foreignId('department_id')->references('id')->on('departments')->nullable()->default(1);
-            $table->string('position');
-            $table->string('status');
+            $table->foreignId('gender_id')->nullable()->default(1)->references('id')->on('genders');
+            $table->foreignId('department_id')->nullable()->default(1)->references('id')->on('departments');
+            $table->string('position')->nullable()->default(null);
+            $table->string('status')->nullable()->default(null);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

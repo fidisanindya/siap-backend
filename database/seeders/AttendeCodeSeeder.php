@@ -23,7 +23,7 @@ class AttendeCodeSeeder extends Seeder
             'code' => Str::random(8),
             'code_type_id' => $types->id,
             'start_time' => "06:00",
-            'end_date' => '08:00'
+            'end_time' => '08:00'
         ]);
     }
 }
